@@ -44,7 +44,7 @@ object NaiveBayesDemo {
     // Apply prediction
     val predictionAndLabel = test.map(p => (model.predict(p.features), p.label))
 
-    // Compare the predicted results and
+    // Compare the predicted results and label to compute accuracy
     val accuracy = 1.0 * predictionAndLabel.filter(x => x._1 == x._2).count() / test.count()
     println("Accuracy: %s".format(accuracy))
 
